@@ -20,19 +20,22 @@ public:
           k--;
           continue;
       }
-       while(k==0){
+       else if (k==0){
            if(nums[first]==1){
-           count--;
-           first++;
-       }
-       else{
-           count--;
-           k+=1;
-           first++;
-
-       }
+               count--;
+                ans = max(ans,count);
+                first++;
+             continue;
+           }
+           else{
+          count--;
+          ans = max(ans,count);
+          first++;
+          k++;
+          continue;
+           }
+      }
     
-        }
         }
         return ans;
 
